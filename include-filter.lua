@@ -6,6 +6,8 @@ function CodeBlock(block)
                 if f ~= nil then
                     block.text = f:read("*all")
                     print("Included file " .. tbl.include)
+                    tbl._include = tbl.include
+                    tbl.include = nil
                     return block
                 else
                     print("Failed to include file " .. tbl.include)
